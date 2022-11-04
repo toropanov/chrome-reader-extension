@@ -7,11 +7,18 @@ import Readability from "./libs/Readability";
 import "./App.css";
 
 export default class App extends Component {
-  state = {
-    title: '',
-    content: '',
-    readerView: true,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: '',
+      content: '',
+      readerView: true,
+    };
+
+    this.keyupListener = this.keyupListener.bind(this);
+    this.closeReader = this.closeReader.bind(this);
+  }
 
   componentWillMount() {
     var documentClone = document.cloneNode(true);
@@ -31,7 +38,13 @@ export default class App extends Component {
         const theme = target.matches ? 'dark' : 'white';
         this.setState({ theme });
       });
+
+      document.addEventListener("keyup", this.keyupListener);
     }
+  }
+
+  keyupListener({ key }) {
+    if (key === "Escape") { this.closeReader() }
   }
 
   closeReader() {
@@ -42,6 +55,8 @@ export default class App extends Component {
     // remove scroll stop style from body
     const bodyElement = document.getElementsByTagName("body");
     bodyElement[0].removeAttribute("style");
+
+    document.removeEventListener("keyup", this.keyupListener);
   }
 
   render() {
@@ -51,7 +66,6 @@ export default class App extends Component {
       return (
         <div className={`rr-app theme-${activeTheme}`}>
           <section className="rr-app-wrapper">
-            <button className="rr-button--close" onClick={() => this.closeReader()}>Close</button>
             <article className="rr-content__wrapper">
               <h1>{this.state.title}</h1>
               {ReactHtmlParser(this.state.content)}
