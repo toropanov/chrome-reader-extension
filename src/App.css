@@ -12,12 +12,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  animation: .5s ease-out slideFromBottom;
   z-index: 9999999; /* to make sure it stays on top */
 }
 
   .rr-app-wrapper {
     margin: 0 auto;
+    max-width: 900px;
     font-family: 'Open Sans', sans-serif;
   }
     /* typography */
@@ -30,27 +30,6 @@
         opacity: 0.2;
       }
     
-    /* Config header style */
-    .rr-app-header {
-      position: fixed;
-      height: 70px;
-      width: 100%;
-      left: 0;
-      top: 0;
-      border-bottom: 1px solid rgba(193, 193, 193, 0.2);
-      z-index: 10;
-    }
-      .rr-app-header__content {
-        background-color: inherit;
-        height: 100%;
-        padding: 0 25px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 18px;
-      }
-
     .rr-app-wrapper img,
     .rr-app-wrapper video,
     .rr-app-wrapper iframe {
@@ -88,169 +67,46 @@
       .rr-app-wrapper h1 {
         font-size: 2.5em;
         font-family: 'Muli', sans-serif;
-        font-weight: normal;
+        font-weight: bold;
       }
       .rr-app-wrapper h2 {
         font-size: 2em;
         font-family: 'Muli', sans-serif;
-        font-weight: normal;
+        font-weight: bold;
       }
       .rr-app-wrapper h3 {
         font-size: 1.77em;
         font-family: 'Muli', sans-serif;
-        font-weight: normal;
+        font-weight: bold;
       }
       .rr-app-wrapper h4 {
         font-size: 1.55em;
         font-family: 'Muli', sans-serif;
-        font-weight: normal;
+        font-weight: bold;
       }
       .rr-app-wrapper h5 {
         font-size: 1.33em;
         font-family: 'Muli', sans-serif;
-        font-weight: normal;
+        font-weight: bold;
       }
       .rr-app-wrapper h6 {
         font-size: 1.22em;
         font-family: 'Muli', sans-serif;
-        font-weight: normal;
-      }
-
-      .rr-theme--toggle {
-        display: flex;
-        background-color: inherit;
-        align-items: center;
-      }
-      .rr-font--update {
-        display: inline-block;
-        width: 30px;
         font-weight: bold;
-        margin-right: 5px;
-        font-size: 18px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        line-height: 22px;
-        cursor: pointer;
-      }
-        .rr-font--update.rr-dec {
-          font-size: 15px;
-        }
-        .rr-font--update.rr-inc {
-          font-size: 22px;
-          margin-right: 20px;
-          position: relative;
-        }
-          .rr-font--update.rr-inc::after {
-            content: '';
-            display: inline-block;
-            background-color: rgba(193, 193, 193, 0.4);
-            width: 1px;
-            height: 42px;
-            position: absolute;
-            right: -10px;
-            top: 0;
-          }
-
-
-      .rr-theme--change {
-        display: inline-block;
-        width: 20px;
-        height: 40px;
-        border-radius: 20px;
-        border: 1px solid #6d6d6d;
-        margin: 0 5px;
-        cursor: pointer;
-      }
-    
-      /* Buttons */
-      .rr-button--close {
-        padding: 10px;
-        cursor: pointer;
       }
 
-/* popup style */
-.rr-popup-toggle__wrapper {
-  position: relative;
-  background-color: inherit;
-}
-.rr-popup__wrapper {
-  position: absolute;
-  min-width: 175px;
-  top: 100%;
+/* Buttons */
+.rr-button--close {
+  position: fixed;
+  top: 0;
+  left: 0;
   right: 0;
-  background-color: inherit;
-  box-shadow: -3px 25px 35px -5px rgba(0,0,0,0.3);
-  border-radius: 5px 0 5px 5px;
-  padding: 10px 10px 0;
-}
-
-  h5.dr-popup--label {
-    font-size: 14px;
-    opacity: 0.4;
-    letter-spacing: 1px;
-
-    /* overwrite style */
-    margin-top: 10px !important;
-  }
-
-  .rr-popup-toggle--button {
-    position: relative;
-    top: 5px;
-    cursor: pointer;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 0 15px;
-  }
-
-    .rr-popup-toggle--button figure {
-      width: 6px !important;
-      height: 6px !important;
-      border-radius: 5px !important;
-      background: #303030 !important;
-      margin: 3px 0 !important;
-    }
-
-    .theme-dark .rr-popup-toggle--button figure {
-      background: #ffffff;
-    }
-
-  .rr-popup__control {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    margin-right: 8px;
-  }
-
-  .rr-popup__toggle {
-    display: block;
-    font-size: 14px;
-    background-color: transparent;
-    transition: 0.3s;
-    text-align: left;
-    padding: 5px 0;
-    cursor: pointer;
-  }
-    .rr-popup__toggle.active {
-      background-color: #4e7de8;
-      color: #ffffff;
-      text-align: center;
-    }
-
-  .rr-popup__wrapper h5 {
-    font-size: 16px;
-  }
-
-@keyframes slideFromBottom {
-  0% {
-    transform: translateY(100%);
-    opacity: .3;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px;
+  padding: 0;
+  line-height: 27px;
+  border-radius: 0 0 12px 10px;
 }
 
 /* theme */
@@ -262,21 +118,6 @@
   .theme-white h5,
   .theme-white h6{
     color: #303030;
-  }
-
-.theme-yellow {
-  color: #303030;
-  background-color: #f7f0e4;
-}
-  .theme-yellow p,
-  .theme-yellow h1,
-  .theme-yellow h2,
-  .theme-yellow h3,
-  .theme-yellow h4,
-  .theme-yellow h5,
-  .theme-yellow h6{
-    /* make sure that the site styles are not applied for the color of heading*/
-    color: #303030 !important;
   }
 
   .theme-dark p,
@@ -291,102 +132,37 @@
     color: #ffffff !important;
   }
 
-
-/* speed reading style */
-.rr-speed .rr-content__wrapper > div {
-  position: relative;
-}
-
-.rr-speed .rr-content__wrapper {
-  text-align: justify;
-}
-
-.rr-speed .rr-content__wrapper > div:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-left: 50px solid;
-  border-right: 50px solid;
-  box-sizing: border-box;
-  pointer-events: none;
-}
-
-  /* images and headings should not have the speed reading cut */
-  .rr-speed h1,
-  .rr-speed h2,
-  .rr-speed h3,
-  .rr-speed h4,
-  .rr-speed h5,
-  .rr-speed h6,
-  .rr-speed img,
-  .rr-speed video,
-  .rr-speed iframe,
-  .rr-speed table {
-    z-index: 1;
-    position: relative;
-    text-align: left;
-  }
-
-.rr-speed.theme-white .rr-content__wrapper > div:after {
-  border-color: rgba(255, 255, 255, 0.8);
-}
-
-.rr-speed.theme-yellow .rr-content__wrapper > div:after {
-  border-color: rgba(247, 240, 228, 0.8);
-}
-
-.rr-speed.theme-dark .rr-content__wrapper > div:after {
-  border-color: rgba(28, 31, 33, 0.8);
-}
-
-/* icons */
-img.dr-icons {
-  width: 32px;
-  height: 32px;
-  margin-right: 20px;
-}
-
-.rr-popup__action-wrapper {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0,0,0,.1);
-}
-
-.dr-button--action {
-  background: transparent;
-  border: 0;
-  outline: none;
-  height: none;
-  box-shadow: none;
-  text-align: center;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.dr-speed--toggle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
-  .dr-speed--toggle.dr-active {
-    background: rgba(78, 125, 232, 0.32);
-  }
-
 @media (prefers-color-scheme: light) {
   .rr-app {
     color: #303030;
     background-color: #ffffff;
+  }
+
+  .rr-button--close {
+    background: #f1f3f4;
+    border: 1px solid #dbdcdd;
+    border-top: none;
+    color: #606269;
+  }
+
+  .rr-button--close:hover {
+    background: #f1f3f4;
   }
 }
 @media (prefers-color-scheme: dark) {
   .rr-app {
     color: #ffffff;
     background-color: #1c1f21;
+  }
+
+  .rr-button--close {
+    border: 1px solid #606165;
+    border-top: none;
+    color: #fff;
+    background-color: #35363a;
+  }
+
+  .rr-button--close:hover {
+    background-color: #35363a;
   }
 }
